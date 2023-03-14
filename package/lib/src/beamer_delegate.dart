@@ -428,6 +428,7 @@ class BeamerDelegate extends RouterDelegate<RouteInformation>
     // run guards on _beamLocationCandidate
     final context = _context;
     if (context != null) {
+      _beamLocationCandidate.data = data;
       final didApply = _runGuards(context, _beamLocationCandidate);
       _didRunGuards = true;
       if (didApply) {
