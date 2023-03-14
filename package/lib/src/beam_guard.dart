@@ -126,9 +126,9 @@ class BeamGuard {
       final redirectBeamLocation =
           GuardShowPage(target.state.routeInformation, showPage!);
       if (replaceCurrentStack) {
-        delegate.beamToReplacement(redirectBeamLocation);
+        delegate.beamToReplacement(redirectBeamLocation, data: target.data);
       } else {
-        delegate.beamTo(redirectBeamLocation);
+        delegate.beamTo(redirectBeamLocation, data: target.data);
       }
       return true;
     }
@@ -153,9 +153,9 @@ class BeamGuard {
         return true;
       }
       if (replaceCurrentStack) {
-        delegate.beamToReplacement(redirectBeamLocation);
+        delegate.beamToReplacement(redirectBeamLocation, data: target.data);
       } else {
-        delegate.beamTo(redirectBeamLocation);
+        delegate.beamTo(redirectBeamLocation, data: target.data);
       }
       if (redirectBeamLocation.state.routeInformation.location == deepLink) {
         delegate.setDeepLink(null);
@@ -174,9 +174,9 @@ class BeamGuard {
         return true;
       }
       if (replaceCurrentStack) {
-        delegate.beamToReplacementNamed(redirectNamed);
+        delegate.beamToReplacementNamed(redirectNamed, data: target.data);
       } else {
-        delegate.beamToNamed(redirectNamed);
+        delegate.beamToNamed(redirectNamed, data: target.data);
       }
       if (redirectNamed == deepLink) {
         delegate.setDeepLink(null);
